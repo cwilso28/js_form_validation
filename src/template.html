@@ -7,27 +7,42 @@
 </head>
 <body>
   <form>
-    <label for="email">Email:</label>
-    <input id="email" type="text">
+    <div>
+      <label for="email">Email:</label>
+      <input id="email" type="text">
+    </div>
+    
+    <div>
+      <label for="country">Country:</label>
+      <input list="countries" name="country">
+      <datalist id = "countries">
+        <option value="United States">United States</option>
+        <option value="Afghanistan">Afghanistan</option>
+        <option value="Japan">Japan</option>
+        <option value="Portugal">Portugal</option>
+        <option value="Swaziland">Swaziland</option>
+      </datalist>
+    </div>
 
-    <label for="country">Country:</label>
-    <input list="countries" name="country">
-    <datalist id = "countries">
-      <option value="United States">United States</option>
-      <option value="Afghanistan">Afghanistan</option>
-      <option value="Japan">Japan</option>
-      <option value="Portugal">Portugal</option>
-      <option value="Swaziland">Swaziland</option>
-    </datalist>
+    <div>
+      <label for="post_code">Postal Code:</label>
+      <input id="post_code" type="text">
+    </div>
 
-    <label for="post_code">Postal Code:</label>
-    <input id="post_code" type="text">
+    <div>
+      <label for="password">Password:</label>
+      <input id="password" type="text">
+    </div>
 
-    <label for="password">Password:</label>
-    <input id="password" type="text">
+    <div>
+      <label for="pw_confirm">Password Confirmation:</label>
+      <input id="pw_confirm" type="text">
+    </div>
 
-    <label for="pw_confirm">Password Confirmation:</label>
-    <input id="pw_confirm" type="text">
+    <div>
+      <button type="button">Submit</button>
+    </div>
+    
   </form>
 </body>
 </html>
