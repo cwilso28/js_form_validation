@@ -52,6 +52,31 @@ function showPwdError() {
     else if (pwd.validity.patternMismatch || pwd.validity.tooShort) {
         pwdError.textContent = "Password must be at least 8 characters long, with one symbol, one capital letter, and one number";
     }
-    pwdError.className = "error active"
+    pwdError.className = "error active";
 };
 
+let pwdConfirm = document.getElementById("pw_confirm");
+let pwdConfirmError = document.querySelector("#pw_confirm + span.error");
+
+pwdConfirm.addEventListener("input", (event) => {
+    if (pwdConfirm.validity.valid && pwdConfirm.value === pwd.value) {
+        pwdConfirmError.textContent = "";
+        pwdConfirmError.className = "error";
+    }
+
+    else {
+        showPwdConfirmError();
+    }
+})
+
+function showPwdConfirmError() {
+    if (pwdConfirm.validity.valueMissing) {
+        pwdConfirmError.textContent = "Please confirm password";
+    }
+
+    else if (!(pwdConfirm.value === pwd.value)) {
+        pwdConfirmError.textContent = "Does not match password!";
+    }
+
+    pwdConfirmError.className = "error active";
+}
