@@ -31,7 +31,8 @@
 
     <div>
       <label for="password">Password:</label>
-      <input id="password" type="text">
+      <input id="password" type="password" required minlength="8" pattern = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).*">
+      <span class="error"></span>
     </div>
 
     <div>
