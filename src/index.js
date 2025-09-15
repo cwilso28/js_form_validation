@@ -37,8 +37,15 @@ let zipcodeFormats = {"United States":("[0-9]{5}","NNNNN"),
                       "Swaziland":("[A-Z][1-9]{3}","LNNN")
 }
 
+let country = document.getElementById("country");
 let postal = document.getElementById("post-code");
 let postalError = document.querySelector("#post-code + span.error")
+
+country.addEventListener("change", (event) => {
+    let selectedCountry = zipcodeFormats(country.value);
+    postal.pattern = selectedCountry[0];
+    let postalFormatString = selectedCountry[1];
+})
 
 postal.addEventListener("input", (event) => {
     if (postal.validity.valid) {
