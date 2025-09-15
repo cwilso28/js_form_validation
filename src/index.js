@@ -40,6 +40,27 @@ let zipcodeFormats = {"United States":("[0-9]{5}","NNNNN"),
 let postal = document.getElementById("post-code");
 let postalError = document.querySelector("#post-code + span.error")
 
+postal.addEventListener("input", (event) => {
+    if (postal.validity.valid) {
+        postalError.textContent = "";
+        postalError.className = "error";
+    }
+
+    else {
+        showPostalError();
+    }
+})
+
+function showPostalError() {
+    if (postal.validity.valueMissing) {
+        postalError.textContent = "Please enter a postal code";
+    }
+
+    else if (postal.validity.patternMismatch) {
+        pass;
+    }
+}
+
 let pwd = document.getElementById("password");
 let pwdError = document.querySelector("#password + span.error");
 
