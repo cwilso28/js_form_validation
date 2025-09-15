@@ -30,6 +30,16 @@ function showEmailError() {
     emailError.className = "error active"
 }
 
+let zipcodeFormats = {"United States":("[0-9]{5}","NNNNN"),
+                      "Afghanistan":("([1-3][0-9]|4[1-3])([0-4][1-9]|50)","NNNN"),
+                      "Japan":("[1-9]{3}\-[1-9]{4}","NNN-NNNN"),
+                      "Portugal":("[1-9]{4}\-[1-9]{3}","NNNN-NNN"),
+                      "Swaziland":("[A-Z][1-9]{3}","LNNN")
+}
+
+let postal = document.getElementById("post-code");
+let postalError = document.querySelector("#post-code + span.error")
+
 let pwd = document.getElementById("password");
 let pwdError = document.querySelector("#password + span.error");
 
